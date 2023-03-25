@@ -1,0 +1,4 @@
+[background]
+name = "Chessboard"
+image = "background-751.png"
+priority = -40

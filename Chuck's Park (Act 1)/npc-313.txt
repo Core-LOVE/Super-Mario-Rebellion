@@ -1,0 +1,1 @@
+throwtime = 45
