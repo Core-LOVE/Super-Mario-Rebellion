@@ -1,11 +1,14 @@
+local extraBGOProperties = require("libraries/extraBGOProperties")
+-- local foreShadows = require("libraries/foreShadows")
+-- foreShadows.forePriority = -9.9975
+-- foreShadows.shadowColor = Color.fromHex(0x3F1500BF)
+
 local effect = Particles.Emitter(0, 0, "p_fallingleaf.ini")
 effect:AttachToCamera(camera)
 
 function onCameraDraw()
     effect:Draw()
 end
-
-local extraBGOProperties = require("libraries/extraBGOProperties")
 
 extraBGOProperties.registerID(1,{
     movementFunc = function(v,t)
