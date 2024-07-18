@@ -1,0 +1,5 @@
+image = background-788.png
+frames = 1
+name = "Tulip"
+priority = -80
+grid=8

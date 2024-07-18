@@ -1,0 +1,81 @@
+[background2]
+name = "SMB3 Waterfall (22 + 2)"
+fill-color = #88A3F2
+
+[bg]
+img="backisles.png"
+repeatX=true
+alignY=BOTTOM
+depth=300.1
+y=24
+
+[clouds]
+img="clouds.png"
+repeatX=true
+alignY=BOTTOM
+depth=350
+y=-48
+speedX=0.25
+
+[skies]
+img="skies.png"
+repeatX=true
+alignY=BOTTOM
+depth=600
+
+[s1]
+img="water1.png"
+depth=300
+repeatX=true
+alignY=BOTTOM
+parallaxX = 0.3
+speedX=0.05
+
+[s2]
+img="water2.png"
+depth=300
+repeatX=true
+alignY=BOTTOM
+parallaxX = 0.4
+speedX=0.1
+
+[s3]
+img="water3.png"
+depth=300
+repeatX=true
+alignY=BOTTOM
+parallaxX = 0.5
+speedX=0.5
+
+[s4]
+img="water4.png"
+depth=300
+repeatX=true
+alignY=BOTTOM
+parallaxX = 0.6
+speedX=1
+
+[ship]
+img="ship.png"
+depth=250
+repeatX=true
+alignY=BOTTOM
+speedX=-0.5
+y = 96
+
+[wa]
+depth = 0
+img = "fg_water.png"
+repeatX = true
+speedX=1
+alignY=BOTTOM
+priority=0.16
+frames=7
+framespeed=6
+
+[gradient]
+img="graphics/backgrounds/gradient_white_down.png"
+priority=0.32
+parallaxX=0
+parallaxY=0
+opacity=0.32

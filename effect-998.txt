@@ -1,0 +1,9 @@
+[1]
+import=AI_DROP
+rotation=-32:32
+xAlign=CENTER
+yAlign=CENTER
+spawnBindX=CENTER
+spawnBindY=CENTER
+priority=5
+gravity=0.2

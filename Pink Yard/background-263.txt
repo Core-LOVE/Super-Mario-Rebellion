@@ -1,0 +1,4 @@
+lightbrightness=2
+lightcolor=orange
+lightflicker=true
+lightradius=128

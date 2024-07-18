@@ -1,0 +1,4 @@
+frames = 1
+name = "Foxglove"
+grid=8
+grid-offset-x = 1

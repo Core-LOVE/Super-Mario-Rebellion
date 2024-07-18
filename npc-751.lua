@@ -12,7 +12,7 @@
 local npcManager = require("npcManager")
 local npcutils = require("npcs/npcutils")
 
-local ai = require("galoomba_ai")
+local ai = require("scripts/npc/galoomba_ai")
 
 
 local galoomba = {}

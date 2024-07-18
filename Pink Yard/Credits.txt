@@ -1,0 +1,2 @@
+Crazee Dayzee code loosely based off of an old .dll NPC made by Enjl.
+Collision for bubbles uses a bit of code by 8lueStorm.

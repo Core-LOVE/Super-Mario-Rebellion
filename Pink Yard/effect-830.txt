@@ -1,0 +1,6 @@
+[1]
+onTick=TICK_PETAL
+frames=20
+lifetime=63
+priority=-29
+speedY = 1

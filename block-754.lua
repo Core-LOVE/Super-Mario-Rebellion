@@ -1,4 +1,4 @@
-local ai = require("blocks/ai/fakeblocks")
+local ai = require("scripts/block/fakeblocks")
 
 local blockID = BLOCK_ID
 

@@ -1,0 +1,6 @@
+image = background-777.png
+frames = 1
+name = "Lavender"
+priority = -80
+grid=8
+grid-offset-x = -1

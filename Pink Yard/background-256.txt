@@ -1,0 +1,3 @@
+frames = 1
+name = "Foxglove"
+grid=8
