@@ -1,7 +1,8 @@
 local enchanced_camera = {}
 
 enchanced_camera.distance = 52
-enchanced_camera.speed = 0.001
+enchanced_camera.speed = 0.0005
+enchanced_camera.delay = 32
 
 function enchanced_camera.get(camIdx)
 	if enchanced_camera[camIdx] == nil then
@@ -16,6 +17,13 @@ function enchanced_camera.get(camIdx)
 	return enchanced_camera[camIdx]
 end
 
+local function setDirection(encam, p)
+	Routine.waitFrames(enchanced_camera.delay)
+
+	encam.direction = p.direction
+	encam.t = 0
+end
+
 function enchanced_camera.onCameraUpdate(camIdx)
 	local cam = Camera(camIdx)
 	local p = Player(camIdx)
@@ -27,8 +35,7 @@ function enchanced_camera.onCameraUpdate(camIdx)
 	if encam.t > 1 then encam.t = 1 end
 
 	if (encam.direction ~= p.direction) then
-		encam.direction = p.direction
-		encam.t = 0
+		Routine.run(setDirection, encam, p)
 	end
 
 	encam.x = math.lerp(encam.x, enchanced_camera.distance * encam.direction, encam.t)

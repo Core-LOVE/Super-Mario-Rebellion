@@ -4,7 +4,7 @@ local hudCreator = require("scripts/hudCreator")
 local data = require("scripts/data")
 local starcoin   = require("npcs/ai/starcoin")
 
-hud.font_name = "textplus/font/1.ini"
+hud.font_name = "textplus/font/6.ini"
 
 hud.coins = hudCreator.addElement("coins", {
     img           = Graphics.loadImageResolved("graphics/hud/coin.png"),
@@ -12,6 +12,7 @@ hud.coins = hudCreator.addElement("coins", {
     x             = data.screen[1] * .3,
     y             = 22,
     getFunc       = function() return mem(0x00B2C5A8, FIELD_WORD) end,
+    textScale = 2,
 })
 
 hud.clovers = hudCreator.addElement("clovers", {
@@ -20,6 +21,7 @@ hud.clovers = hudCreator.addElement("clovers", {
     x             = (data.screen[1] * .3) - 6,
     y             = 44,
     getFunc       = function() return mem(0x00B251E0, FIELD_WORD) end,
+    textScale = 2,
 })
 
 hud.score = hudCreator.addElement("score", {
@@ -28,6 +30,7 @@ hud.score = hudCreator.addElement("score", {
     y           = 22,
     pivot       = Sprite.align.TOPRIGHT,
     getFunc     = function() return string.format("%.7d", Misc.score()) end,
+    textScale = 2,
 })
 
 function hud.drawItemBox(v, camIdx, vanillaPriority, isSplit)
@@ -75,6 +78,7 @@ hud.itembox = hudCreator.addElement("itembox", {
     condition   = function() return Graphics.getHUDType(player.character) == Graphics.HUD_ITEMBOX end,
     -- drawBackdrop = true,
     drawFunc     = hud.drawItemBox,
+    textScale = 2,
 })
 
 local starCol    = Graphics.sprites.hardcoded["51-1"].img
@@ -115,6 +119,7 @@ hudCreator.addElement("starcoins", {
     condition     = function() return starcoin.count(LevelName) > 0 end,
     getFunc       = function() return starcoin.getLevelCollected(LevelName) end,
     drawFunc      = drawStarcoins,
+    textScale = 2,
 })
 
 return hud

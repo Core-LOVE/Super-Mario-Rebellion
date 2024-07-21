@@ -1,0 +1,7 @@
+lightoffsetx = 0
+lightoffsety = 0
+lightradius = 64
+lightbrightness = 0.5
+lightcolor = yellow
+lightflicker = true
+priority=-20

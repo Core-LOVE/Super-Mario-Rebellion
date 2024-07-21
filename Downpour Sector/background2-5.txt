@@ -1,0 +1,10 @@
+[background2]
+name = "Downpour"
+fill-color = #363830
+
+[Layer1]
+depth = 300
+img = 6
+repeatX = true
+alignY=BOTTOM
+y=192

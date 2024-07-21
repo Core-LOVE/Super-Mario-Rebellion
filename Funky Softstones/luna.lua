@@ -68,12 +68,12 @@ local function move()
     transition.to(layer1, delay, transition.EASING_INOUTSINE, {speedY = speed})
     transition.to(layer2, delay, transition.EASING_INOUTSINE, {speedY = -speed})
 
-    Routine.waitFrames(64)
+    Routine.waitFrames(delay)
 
     transition.to(layer1, delay, transition.EASING_INOUTSINE, {speedY = -speed})
     transition.to(layer2, delay, transition.EASING_INOUTSINE, {speedY = speed})
 
-    Routine.waitFrames(64)
+    Routine.waitFrames(delay)
 
     Routine.run(move)
 end

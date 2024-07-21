@@ -1,0 +1,12 @@
+{
+	"style" : "tree",
+	"title" : "Shapeshifter Settings",
+	"layout": [
+		{
+			"control": "lineEdit",
+			"name": "name",
+			"title": "Shared Name",
+			"value-default": "default"
+		}
+	]
+}

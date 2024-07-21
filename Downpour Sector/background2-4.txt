@@ -1,0 +1,29 @@
+[background2]
+name = "Downpour Sector"
+fill-color = black
+
+[bg1]
+img="bg_1.png"
+depth = 150
+repeatX = true
+repeatY = true
+alignY=BOTTOM
+
+[bg2]
+img="bg_2.png"
+depth = 75
+repeatX = true
+repeatY = true
+alignY=BOTTOM
+
+[water]
+name="water"
+depth = 0
+img = "water.png"
+repeatX = true
+frames=9
+alignY=BOTTOM
+speedX=0.5
+opacity=0.75
+priority=-0.5
+y=132

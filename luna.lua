@@ -5,6 +5,7 @@ local jumpBuffer = require("scripts/jumpBuffer")
 local coyotetime = require("scripts/coyotetime")
 local cp = require("scripts/customPowerups")
 local extraBGOProperties = require("scripts/extraBGOProperties")
+local extraNPCProperties = require("scripts/extraNPCProperties")
 local extendedKoopas = require("scripts/npc/extendedKoopas")
 local transition = require("transition")
 
@@ -13,10 +14,11 @@ cp.addPowerup("Cape", "scripts/powerups/cape", 851, true)
 require("scripts/enchanced_camera")
 require("scripts/retroResolution")
 require("scripts/warpTransition")
-require("scripts/inertia")
+-- require("scripts/inertia")
 require("scripts/quickPipes")
 require("scripts/fallParticles")
 require("scripts/fastfall")
+require("scripts/jumpinwater")
 
 local SCREEN_SIZE = data.screen
 
@@ -64,11 +66,43 @@ function onCheckpoint(checkpoint, p)
     end
 end
 
+local effectTimer = {
+    [1] = 0
+}
+
+local function effects()
+    effectTimer[1] = effectTimer[1] + 1
+
+    if effectTimer[1] >= 4 then
+        for k,v in ipairs(Effect.get(1)) do
+            local e = Effect.spawn(999, v.x, v.y)
+            e.opacity = 0.5
+        end
+
+        effectTimer[1] = 0
+    end
+
+    for k,v in ipairs(Effect.get(11)) do
+        Effect.spawn(997, v.x + 16, v.y + 16)
+        v.timer = 0
+        v.animationFrame = -1000
+    end
+end
+
 function onTickEnd()
+    effects()
+
     if (not saveGateData.enabled) then return end
 
     local layer = Layer.get("Save Gate")
 
     if saveGateData.forceZero then layer.speedY = 0 return end
     layer.speedY = saveGateData.speedY
+end
+
+function onPostBlockRemove(block)
+    local w = (block.width - 32) * .5
+    local h = (block.height - 32) * .5
+
+    Effect.spawn(131, block.x + h, block.y + w)
 end

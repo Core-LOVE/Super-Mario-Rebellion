@@ -1,0 +1,6 @@
+gfxwidth=32
+gfxheight=48
+frames=4
+framestyle=0
+grid=16
+speed=0

@@ -2,6 +2,7 @@ Scripts:
 Marioman2007 (hudCreator.lua, customPowerups.lua, quickPipes.lua)
 MrDoubleA (Extended Koopas, NPC Pack)
 MrNameless (fastfall.lua)
+Master of Disaster (inertia.lua, jumpinwater.lua)
 
 Graphics:
 Gamma V
@@ -11,3 +12,11 @@ Krigorn
 PROMETHEUS
 bobpixel
 electro_kun
+Gate
+Murphmario
+Augustus
+SuperArthurBros
+Biddy
+YoshiGo99
+SuperSledgeBro
+Shikaternia

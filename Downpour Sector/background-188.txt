@@ -1,0 +1,5 @@
+image = background-188.png
+frames = 4
+framespeed = 8
+grid=4
+noshadows = false
