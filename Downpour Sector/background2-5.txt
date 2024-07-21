@@ -9,9 +9,15 @@ repeatX = true
 alignY=BOTTOM
 y=192
 
+[Layer2]
+depth = 100
+img = "bg_pipes.png"
+repeatX = true
+alignY=BOTTOM
+
 [gradient]
 img="graphics/backgrounds/gradient_white_down.png"
 priority=0.32
 parallaxX=0
 parallaxY=0
-opacity=0.32
+opacity=0.15
