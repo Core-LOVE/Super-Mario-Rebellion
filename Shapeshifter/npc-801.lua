@@ -146,7 +146,9 @@ end
 function sampleNPC.onNPCCollect(e, v, p)
 	if v.id ~= npcID then return end
 
-	shapeshifter.activate(p)
+	if shapeshifter.canPass(p) then
+		shapeshifter.activate(p, v)
+	end
 
 	e.cancelled = true
 end
@@ -167,6 +169,9 @@ function sampleNPC.onTickNPC(v)
 	--Initialize
 	if not data.initialized then
 		--Initialize necessary data.
+		local settings = data._settings
+
+		data.name = settings.name
 		data.initialized = true
 	end
 

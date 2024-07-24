@@ -17,7 +17,7 @@ local function createWall(v)
         height = v.height,
         width = v.width,
         depth = 32,
-        uv = lib3d.uv.UNWRAP,
+        -- uv = lib3d.uv.UNWRAP,
         material = lib3d.Material(nil, {
             texture=Graphics.sprites.block[v.id].img,
             roughness=1,

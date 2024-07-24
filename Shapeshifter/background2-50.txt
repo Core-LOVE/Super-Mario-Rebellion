@@ -1,0 +1,30 @@
+[background2]
+name = "SMB Mushrooms"
+fill-color = black
+
+
+[sky]
+depth = 300
+img = "bg_sky.png"
+repeatX = true
+alignY=BOTTOM
+speedX=0.1
+
+[forest]
+depth = 200
+img = "bg_forest.png"
+repeatX = true
+alignY=BOTTOM
+
+[forest2]
+depth = 100
+img = "bg_forest2.png"
+repeatX = true
+alignY=BOTTOM
+
+[gradient]
+img="graphics/backgrounds/gradient_white_down.png"
+priority=0.32
+parallaxX=0
+parallaxY=0
+opacity=0.4

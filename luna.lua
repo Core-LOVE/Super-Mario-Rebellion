@@ -19,6 +19,8 @@ require("scripts/quickPipes")
 require("scripts/fallParticles")
 require("scripts/fastfall")
 require("scripts/jumpinwater")
+require("scripts/littleDialogue")
+require("scripts/death")
 
 local SCREEN_SIZE = data.screen
 

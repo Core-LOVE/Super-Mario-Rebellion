@@ -3,8 +3,11 @@ Marioman2007 (hudCreator.lua, customPowerups.lua, quickPipes.lua)
 MrDoubleA (Extended Koopas, NPC Pack)
 MrNameless (fastfall.lua)
 Master of Disaster (inertia.lua, jumpinwater.lua)
+Emral (spawnzones)
 
 Graphics:
+Nintendo
+MegaDood
 Gamma V
 gbradley231
 Lumsht
@@ -21,6 +24,25 @@ YoshiGo99
 SuperSledgeBro
 Shikaternia
 Mushroom Kingdom Fusion Team
+Rendering Ranger: R2
+Radiance
+Master of Disaster
+AirShip
+SquishyRex
+kleynner64
+Damarioman
+Astrakitu
+Linkstorm Z
+Mattrizle
+Barack Obama
+Random Talking Bush
+
+Music:
+Nintendo
+Wandering Artist
+Jorge Fuentes
 
 Sounds:
 InspectorJ
+ViRiX
+Ogrebane

@@ -1,0 +1,2 @@
+Sprites by SanS1m0n
+Uses afterimages.lua by Enjl

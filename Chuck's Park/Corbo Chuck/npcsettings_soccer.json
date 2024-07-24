@@ -1,0 +1,14 @@
+{
+	"style" : "groupbox",
+	"title" : "Soccer Ball Settings",
+	"layout": [
+	
+		{
+			"control": "combobox",
+			"name": "style",
+			"title": "Style",
+			"elements": ["Black and White", "Black and Pink", "Black and Yellow"],
+			"value-default": 0
+		}
+		]
+}

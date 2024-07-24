@@ -3,6 +3,7 @@ local enchanced_camera = {}
 enchanced_camera.distance = 52
 enchanced_camera.speed = 0.0005
 enchanced_camera.delay = 32
+enchanced_camera.enabled = true
 
 function enchanced_camera.get(camIdx)
 	if enchanced_camera[camIdx] == nil then
@@ -33,6 +34,15 @@ function enchanced_camera.onCameraUpdate(camIdx)
 	encam.t = (encam.t + enchanced_camera.speed)
 
 	if encam.t > 1 then encam.t = 1 end
+
+	if not enchanced_camera.enabled then
+		encam.x = math.lerp(encam.x, 0, encam.t)
+
+		cam.x = cam.x + encam.x
+		cam.x = math.clamp(cam.x, section.boundary.left, section.boundary.right - cam.width)
+
+		return
+	end
 
 	if (encam.direction ~= p.direction) then
 		Routine.run(setDirection, encam, p)
