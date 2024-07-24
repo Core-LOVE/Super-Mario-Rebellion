@@ -1551,7 +1551,6 @@ ID:801;X:-195232;Y:-200064;D:-1;XTRA:"{\n    \"name\"\: \"death2\"\n}\n";
 ID:801;X:-195072;Y:-200416;D:-1;XTRA:"{\n    \"name\"\: \"notdeath\"\n}\n";
 ID:800;X:-194624;Y:-200320;D:-1;CN:113;XTRA:"{\n    \"name\"\: \"notdeath\"\n}\n";
 ID:119;X:-194880;Y:-200320;D:1;
-ID:801;X:-194720;Y:-200416;D:-1;XTRA:"{\n    \"name\"\: \"notdeath\"\n}\n";
 ID:119;X:-193984;Y:-200224;D:1;
 ID:800;X:-193856;Y:-200224;D:-1;CN:113;XTRA:"{\n    \"name\"\: \"notdeath\"\n}\n";
 ID:801;X:-194112;Y:-200096;D:-1;XTRA:"{\n    \"name\"\: \"notdeath\"\n}\n";
