@@ -2109,8 +2109,8 @@ littleDialogue.registerStyle("ml",{
 
 -- Deltarune styled: very different from the rest! Also uses a shader for text to add an extra effect.
 littleDialogue.registerStyle("dr",{
-    textXScale = 1,
-    textYScale = 1,
+    textXScale = 2,
+    textYScale = 2,
     textMaxWidth = 600,
 
     speakerNameXScale = 1,
@@ -2130,7 +2130,7 @@ littleDialogue.registerStyle("dr",{
     minBoxMainHeight = 104,
 
     forcedPosEnabled = true,
-    forcedPosX = 400,
+    forcedPosX = 960 / 2,
     forcedPosY = 32,
     forcedPosHorizontalPivot = 0.5,
     forcedPosVerticalPivot = 0,
@@ -2145,7 +2145,8 @@ littleDialogue.registerStyle("dr",{
     scrollSoundEnabled = false,
     moveSelectionSoundEnabled = false,
     chooseAnswerSoundEnabled = false,
-
+    typewriterSoundEnabled = false,
+    
     continueArrowEnabled = false,
 })
 

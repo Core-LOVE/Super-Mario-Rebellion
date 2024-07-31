@@ -2,6 +2,7 @@
 local npcManager = require("npcManager")
 local npcutils = require("npcs/npcutils")
 local colliders = require("Colliders")
+local afterimages = require("scripts/afterimages")
 
 --**************************
 --Rotation code by MrDoubleA
@@ -83,6 +84,22 @@ local function drawSprite(args) -- handy function to draw sprites (MrDoubleA wro
 	sprite:draw{priority = -45,color = args.color,sceneCoords = args.sceneCoords or args.scene}
 end
 
+local delay = 0
+
+local function playSound(v)
+	if delay > 0 then return end
+
+	SFX.create{
+		x = v.x + v.width * .5,
+		y = v.y + v.height * .5,
+		falloffRadius = 480,
+		sound = "ball-kick.ogg",
+		loops = 1,
+	}
+
+	delay = 6
+end
+
 function football.onTickEndNPC(v)
 	--Don't act during time freeze
 	if Defines.levelFreeze then return end
@@ -141,7 +158,8 @@ function football.onTickEndNPC(v)
 		
 		for _,plr in ipairs(Player.get()) do
 			if colliders.collide(plr, data.detectBox) then
-			
+				playSound(v)
+
 				if plr.x < v.x then
 					if v.speedX < 0 and plr.speedX < 0 then
 						v.speedX = -v.speedX
@@ -176,7 +194,8 @@ function football.onTickEndNPC(v)
 			local cfg = NPC.config[npc.id]
 
 			if npc.idx ~= v.idx and npc.id ~= 811 and colliders.collide(npc, data.detectBox) and not cfg.iscoin and not cfg.isinteractable and not npc.friendly then
-			
+				playSound(v)
+
 				if npc.x < v.x then
 					if v.speedX < 0 and npc.speedX < 0 then
 						v.speedX = -v.speedX
@@ -199,9 +218,9 @@ function football.onTickEndNPC(v)
 				-- 	npc.speedY = npc.speedY * -1
 				-- end
 				
-				if (v.speedY > 0 and v.speedY < 7) and npc.speedY == 0 then
-					v.speedY = -6
-				end
+				-- if (v.speedY > 0 and v.speedY < 7) and npc.speedY == 0 then
+				-- 	v.speedY = -6
+				-- end
 				
 			end
 		end
@@ -233,7 +252,7 @@ function football.onTickEndNPC(v)
 		end
 		}
 		if (v.speedX > 4 or v.speedX < -4) or (v.speedY > 6.5 or v.speedY < -6.5) then
-			for _,b in ipairs(list) do		
+			for _,b in ipairs(list) do	
 				b:hit(true)	
 			end
 		end
@@ -263,6 +282,16 @@ function football.onTickEndNPC(v)
 	else
 		v.ai3 = 2
 	end
+
+	local speedX = math.abs(v.speedX)
+
+	if speedX >= 6 then
+		if lunatime.tick() % 4 == 0 then
+			afterimages.create(v, 26, Color.red .. 0.5)
+		end
+	end
+
+	delay = delay - 0.5
 end
 
 function football.onDrawNPC(v)

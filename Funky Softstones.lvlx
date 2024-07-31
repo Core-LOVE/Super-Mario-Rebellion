@@ -7,7 +7,7 @@ SC:1;L:-180080;R:-179120;T:-180600;B:-180000;MZ:24;MF:"music/Freedom Planet 2 - 
 SC:2;L:-160000;R:-158400;T:-160600;B:-160000;MZ:24;MF:"music/Freedom Planet 2 - Parusa Map.ogg";BG:22;XTRA:"{\n    \"darkness\"\: {\n        \"ambient\"\: \"#ffffffff\"\,\n        \"enableDarkness\"\: true\,\n        \"playerlight\"\: {\n            \"enabled\"\: true\,\n            \"radius\"\: 320\n        }\n    }\,\n    \"effects\"\: {\n        \"screenEffects\"\: 14\,\n        \"weatherCustomPath\"\: \"p_beach.ini\"\,\n        \"weatherUseCustom\"\: true\n    }\n}\n";
 SECTION_END
 STARTPOINT
-ID:1;X:-192236;Y:-200342;D:1;
+ID:1;X:-199788;Y:-200182;D:1;
 ID:2;X:-199596;Y:-200156;D:1;
 STARTPOINT_END
 BLOCK

@@ -9,7 +9,7 @@ end
 local flapSound = Misc.resolveSoundFile("birdflap")
 
 function fallParticles.run(v)
-	SFX.play(flapSound)
+	SFX.play(flapSound, 0.25)
 
 	Effect.spawn(999, v.x - 16, v.y + v.height - 16)
 	Effect.spawn(999, v.x + v.width, v.y + v.height - 16)

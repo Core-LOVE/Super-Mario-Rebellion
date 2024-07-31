@@ -1,0 +1,48 @@
+{
+	"style" : "groupbox",
+	"title" : "World Map Stuff",
+	"layout": [
+		{
+			"control": "spinBox",
+			"name": "depth",
+			"title" : "Depth",
+			"type": "int",	
+			"value-default": 96,
+			"value-max": 9999
+		},
+		{
+			"control": "spinBox",
+			"name": "x",
+			"title" : "X",
+			"type": "int",	
+			"value-default": 0,
+			"value-min": -999999,
+			"value-max": 999999
+		},
+		{
+			"control": "spinBox",
+			"name": "y",
+			"title" : "Y",
+			"type": "int",	
+			"value-default": 0,
+			"value-min": -999999,
+			"value-max": 999999
+		},
+		{
+			"control": "spinBox",
+			"name": "z",
+			"title" : "Z",
+			"type": "int",	
+			"value-default": 0,
+			"value-min": -999999,
+			"value-max": 999999
+		},
+		{
+			"control": "checkbox",
+			"name": "isPlane",
+			"title": "Is Plane?",
+			"text-visible": false,
+			"value-default": false
+		}	
+	]
+}

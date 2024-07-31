@@ -128,6 +128,10 @@ function shapeshifter.activate(p, v)
 					p.forcedTimer = 0
 					shapeshifter.activated[p] = false
 					shapeshifter.delay[p] = 16
+
+					enchanced_camera.enabled = true
+					enchanced_camera.get(p.idx).t = 0
+
 					cam.targets = nil
 				else
 					shapeshifter.npc[p] = npc.data.npc
@@ -223,9 +227,19 @@ function shapeshifter.onTickEnd()
 	end
 end
 
+function shapeshifter.onPostPlayerKill(p)
+	shapeshifter.delay[p] = nil
+	shapeshifter.npc[p] = nil
+	shapeshifter.activated[p] = nil
+
+	local cam = handycam[p.idx]
+	cam.targets = nil
+end
+
 function shapeshifter.onInitAPI()
 	registerEvent(shapeshifter, 'onTickEnd')
 	registerEvent(shapeshifter, 'onCameraDraw')
+	registerEvent(shapeshifter, 'onPostPlayerKill')
 end
 
 return shapeshifter

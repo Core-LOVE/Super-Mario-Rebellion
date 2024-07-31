@@ -1,9 +1,10 @@
 Scripts:
-Marioman2007 (hudCreator.lua, customPowerups.lua, quickPipes.lua)
+Marioman2007 (hudCreator.lua, customPowerups.lua, quickPipes.lua, smgSpin.lua, Lua Pack)
 MrDoubleA (Extended Koopas, NPC Pack)
 MrNameless (fastfall.lua)
 Master of Disaster (inertia.lua, jumpinwater.lua)
-Emral (spawnzones)
+Emral (spawnzones, Layerblend Shader)
+KBM-Quine (anotherPowerDownLibrary.lua v1.1.2)
 
 Graphics:
 Nintendo
@@ -36,6 +37,7 @@ Linkstorm Z
 Mattrizle
 Barack Obama
 Random Talking Bush
+LxXzit
 
 Music:
 Nintendo
@@ -46,3 +48,6 @@ Sounds:
 InspectorJ
 ViRiX
 Ogrebane
+Cooper B. Chance
+Mysticus
+Jandre160108

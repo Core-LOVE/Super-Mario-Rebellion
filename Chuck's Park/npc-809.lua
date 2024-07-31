@@ -116,7 +116,7 @@ end
 
 
 
-local alwaysHittableIDs = table.map{40,85,87,246,319,390,615,617}
+local alwaysHittableIDs = table.map{40,85,87,246,319,390,615,617, 810}
 
 local function deflect(batter,projectile)
 	projectile.speedX = math.clamp(math.abs(projectile.speedX)*1.5,1.5,16)*batter.direction
@@ -215,6 +215,12 @@ npcHandlers[40] = (function(batter,projectile)
 	return true
 end)
 
+npcHandlers[810] = (function(batter,projectile)
+	deflect(batter,projectile)
+	projectile.speedY = -12
+
+	return true
+end)
 
 local function handleAnimation(v,data,config)
 	local idleFrames = (config.frames-config.hitFrames)
@@ -324,6 +330,7 @@ function battinChuck.onTickEndNPC(v)
 	colBox.height = config.hittableHeight
 
 	colBox.y = v.y + v.height - colBox.height
+	colBox.y = colBox.y - 3
 
 	if v.direction == DIR_LEFT then
 		colBox.x = v.x - colBox.width

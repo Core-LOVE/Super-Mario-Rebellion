@@ -1,0 +1,12 @@
+[1]
+import=AI_SINGLE
+onTick=TICK_TIEM_SPARKLE
+spawnBindX=CENTER
+spawnBindY=CENTER
+xAlign=CENTER
+yAlign=CENTER
+frames=3
+framespeed=4
+opacity=0.75
+rotation=-16:16
+angle=0:360

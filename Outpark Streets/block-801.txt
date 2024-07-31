@@ -1,0 +1,3 @@
+name="Triangular Block right 45°"
+image="block-801.png"
+floorslope=1

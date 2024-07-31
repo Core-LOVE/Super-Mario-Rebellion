@@ -75,7 +75,7 @@ do
         warpTransition.transitionIsFromLevelStart = false
         warpTransition.currentWarp = nil
     
-        Misc.unpause()
+        if warpTransition.canPause then Misc.unpause() end
     end
     local function exitLevelLogic() -- Exit the level if the warp is set to do so
         if not warpTransition.currentWarp.isValid then return end
@@ -141,7 +141,7 @@ do
             Misc.unpause()
         elseif warpTransition.transitionTimer == middle+1 and not warpTransition.transitionIsFromLevelStart then
             doorTransitionEffects()
-            Misc.pause(true)
+            if warpTransition.canPause then Misc.pause(true) end
         elseif warpTransition.transitionTimer > middle then
             opacity = 1.35-((warpTransition.transitionTimer-middle)/warpTransition.transitionSpeeds[warpTransition.currentTransitionType])
 
@@ -177,7 +177,7 @@ do
             Misc.unpause()
         elseif warpTransition.transitionTimer == middle+1 and not warpTransition.transitionIsFromLevelStart then
             doorTransitionEffects()
-            Misc.pause(true)
+            if warpTransition.canPause then Misc.pause(true) end
         elseif warpTransition.transitionTimer > middle then
             radius = (warpTransition.transitionTimer-middle)*warpTransition.transitionSpeeds[warpTransition.currentTransitionType]
 
@@ -212,7 +212,7 @@ do
             exitLevelLogic()
             Misc.unpause()
         elseif warpTransition.transitionTimer == middle+1 and not warpTransition.transitionIsFromLevelStart then
-            Misc.pause(true)
+            if warpTransition.canPause then Misc.pause(true) end
         elseif warpTransition.transitionTimer > middle then
             opacity = 1.35-((warpTransition.transitionTimer-middle)/warpTransition.transitionSpeeds[warpTransition.currentTransitionType])
             mosaic = (math.floor(warpTransition.transitionSpeeds[warpTransition.currentTransitionType]*1.35)/(warpTransition.transitionSpeeds[warpTransition.currentTransitionType]/64))-((warpTransition.transitionTimer-middle)/(warpTransition.transitionSpeeds[warpTransition.currentTransitionType]/64))
@@ -305,7 +305,7 @@ do
             Misc.unpause()
         elseif warpTransition.transitionTimer == middle+1 and not warpTransition.transitionIsFromLevelStart then
             doorTransitionEffects()
-            Misc.pause(true)
+            if warpTransition.canPause then Misc.pause(true) end
         elseif warpTransition.transitionTimer > middle then
             progress = ((endPoint-warpTransition.transitionTimer)/warpTransition.transitionSpeeds[warpTransition.currentTransitionType])
 
@@ -424,7 +424,7 @@ function warpTransition.onTick()
 
         if warpTransition.currentTransitionType ~= warpTransition.TRANSITION_NONE then
             warpTransition.transitionTimer = 0
-            Misc.pause()
+            if warpTransition.canPause then Misc.pause() end
         end
     end
 end
@@ -438,7 +438,7 @@ function warpTransition.onCameraDraw(camIdx)
 
         
         if warpTransition.transitionIsFromLevelStart and not Misc.isPaused() and lunatime.tick() > 1 then
-            Misc.pause(true)
+            if warpTransition.canPause then Misc.pause(true) end
         end
 
         if warpTransition.currentTransitionType ~= warpTransition.TRANSITION_NONE and warpTransition.musicFadeOut and exitHasDifferentMusic(warpTransition.currentWarp) then
@@ -474,8 +474,8 @@ warpTransition.levelStartTransition = warpTransition.TRANSITION_MOSAIC
 
 warpTransition.transitionSpeeds = {
     [warpTransition.TRANSITION_FADE     ] = 24, -- How long it takes to fade in/out.
-    [warpTransition.TRANSITION_PAN      ] = 12, -- How fast the camera pan is.
-    [warpTransition.TRANSITION_IRIS_OUT ] = 14, -- How quickly the radius of the iris out shrinks.
+    [warpTransition.TRANSITION_PAN      ] = 11, -- How fast the camera pan is.
+    [warpTransition.TRANSITION_IRIS_OUT ] = 11, -- How quickly the radius of the iris out shrinks.
     [warpTransition.TRANSITION_MOSAIC   ] = 24, -- How long it takes to fade in/out.
     [warpTransition.TRANSITION_CROSSFADE] = 24, -- How long it takes to fade in/out.
     [warpTransition.TRANSITION_MELT     ] = 64, -- How long it takes one "slice" to go down.
@@ -483,9 +483,10 @@ warpTransition.transitionSpeeds = {
 }
 
 -- Whether or not transitions can be activated by 'insant' and 'portal' warps.
-warpTransition.activateOnInstantWarps = true
+warpTransition.activateOnInstantWarps = false
 
 -- Whether or not the music will fade out when travelling between sections with different music.
 warpTransition.musicFadeOut = true
+warpTransition.canPause = true
 
 return warpTransition

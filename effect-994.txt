@@ -1,0 +1,9 @@
+[1]
+spawnBindX=CENTER
+spawnBindY=CENTER
+xAlign=CENTER
+yAlign=CENTER
+onTick=TICK_STOMP
+variants=2
+opacity=0.5
+angle=0:360

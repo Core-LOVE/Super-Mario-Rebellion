@@ -21,11 +21,20 @@ require("scripts/fastfall")
 require("scripts/jumpinwater")
 require("scripts/littleDialogue")
 require("scripts/death")
+require("scripts/altjumpInAir")
+require("scripts/anotherPowerDownLibrary")
+require("scripts/collectEffect")
+require("scripts/fastFireBalls")
+require("scripts/newEffects")
+require("scripts/betterReserve")
 
 local SCREEN_SIZE = data.screen
 
+Misc.setWindowTitle(data.window_title)
+Misc.setWindowIcon(Graphics.loadImageResolved("graphics/icon.png"))
+
 function onStart()
-    Player.setCostume(CHARACTER_MARIO,"SMW-Mario",true)
+    Player.setCostume(CHARACTER_MARIO,"smw",true)
     Graphics.setMainFramebufferSize(SCREEN_SIZE[1], SCREEN_SIZE[2])
 end
 
@@ -108,3 +117,20 @@ function onPostBlockRemove(block)
 
     Effect.spawn(131, block.x + h, block.y + w)
 end
+
+function onPlayerHarm(e, p)
+    Defines.earthquake = 8
+end
+
+-- function onPostNPCHarm(v, harmType, c)
+--     local e = Effect.spawn(994, v)
+--     e.variant = math.random(1, 2)
+-- end
+
+-- function onPostBlockHit(v)
+--     if not c then return end
+     
+--     local e = Effect.spawn(994, v)
+--     e.variant = math.random(1, 2)
+--     e.opacity = 0.38
+-- end

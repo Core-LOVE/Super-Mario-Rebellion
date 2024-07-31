@@ -57,7 +57,7 @@ local messageBlockSettings = {
 	bumpStretchDown = -0.06,
 	bumpStretchLanded = 0.12,
 
-	-- bumpSound = Misc.resolveSoundFile("messageBlock_bump"),
+	bumpSound = 32,
 }
 
 npcManager.setNpcSettings(messageBlockSettings)
@@ -124,7 +124,7 @@ local function startBump(v)
 
 	data.cooldown = 24
 
-	-- SFX.play(config.bumpSound)
+	SFX.play(config.bumpSound)
 
 	switchcolors.switch(810, 809)
 	-- Misc.pause(true)
@@ -152,7 +152,7 @@ function messageBlock.onTickNPC(v)
 	data.cooldown = math.max(0,data.cooldown - 1)
 
 	for _,p in NPC.iterate(810) do
-		if Colliders.speedCollide(v,p) and p.y-p.speedY >= v.y+v.height-v.speedY then
+		if Colliders.speedCollide(v,p) then
 			startBump(v)
 		end
 	end
